@@ -1,0 +1,7 @@
+## Interface: 11200
+## Title: Plagued Heart Tracker
+## Notes: Tracks Plagued Heart on ennemy
+## Author: Votre nom
+## Version: 1.0
+
+PlaguedHeartTracker.lua
