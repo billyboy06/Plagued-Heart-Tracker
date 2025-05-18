@@ -3,8 +3,8 @@
 
 -- Créer le cadre principal
 local PlaguedHeartFrame = CreateFrame("Frame", "PlaguedHeartFrame", UIParent)
-PlaguedHeartFrame:SetWidth(100) -- Augmenté la largeur pour plus de confort
-PlaguedHeartFrame:SetHeight(80) -- Augmenté la hauteur pour plus de confort
+PlaguedHeartFrame:SetWidth(150) -- Augmenté la largeur pour plus de confort
+PlaguedHeartFrame:SetHeight(120) -- Augmenté la hauteur pour plus de confort
 PlaguedHeartFrame:SetPoint("CENTER", UIParent, "CENTER", 0, 0)
 PlaguedHeartFrame:EnableMouse(true)
 PlaguedHeartFrame:SetMovable(true)
@@ -77,13 +77,8 @@ end
 PlaguedHeartFrame:RegisterEvent("CHAT_MSG_SPELL_PERIODIC_CREATURE_DAMAGE")
 PlaguedHeartFrame:SetScript("OnEvent", function()
     if event == "CHAT_MSG_SPELL_PERIODIC_CREATURE_DAMAGE" then
-        -- Utilise une expression régulière pour capturer n'importe quelle cible affectée par Plagued Heart
-        if string.find(arg1, "is afflicted by Plagued Heart %(1%)") then
+        if string.find(arg1, " is afflicted by Plagued Heart %(%d+%)") then
             IncrementCounter()
-            
-            -- Afficher la cible dans le chat (optionnel, pour debug)
-            -- local target = string.match(arg1, "(.+) is afflicted by Plagued Heart")
-            -- DEFAULT_CHAT_FRAME:AddMessage("|cFF33AAFF[Plagued Heart]|r Application sur: " .. (target or "inconnu"))
         end
     end
 end)

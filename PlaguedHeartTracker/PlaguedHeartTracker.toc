@@ -1,6 +1,6 @@
 ## Interface: 11200
 ## Title: Plagued Heart Tracker
-## Notes: Tracks Plagued Heart on ennemy
+## Notes: Tracks Corruption (1) on Expert Training Dummy
 ## Author: Votre nom
 ## Version: 1.0
 
